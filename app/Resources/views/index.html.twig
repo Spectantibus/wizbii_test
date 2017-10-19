@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/home_style.css') }}" />
+
+
+{% endblock %}
+
+{% block body %}
+    <article>
+        {% for item in items %}
+            {% if item['type'] == 'publication' %}
+                <div class="publication">
+                    <table>
+                        {% if item['publication']['profile'] is defined %}
+                            <tr>
+                                <td class="publication-header-picture"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/15710-200.png" alt="discussion "></td>
+                                    <td class="publication-header-picture"><img src="{{ item['publication']['profile']['avatar'] }}" alt=""></td>
+                                    <td><span class="publication-name blue">{{ item['publication']['profile']['name'] }}</span><span class="publication-date light-grey"> - {{ item['date']|date("d/m/y") }}</span><br>
+                                        {% if item['publication']['profile']['title'] is defined %}
+                                            <span class="user-title light-grey">{{ item['publication']['profile']['title'] }}</span>
+                                        {% endif %}
+                                    </td>
+                                <td class="down-arrow-icon"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/10897-200.png" alt=""></td>
+                            </tr>
+                        {#{% elseif item['publication'][''] %}#}
+
+                        {% endif %}
+
+                        <tr>
+                            <td colspan="4">
+                                {% for tag in item['publication']['tags'] %}
+                                    <strong>#{{ tag['name'] }}</strong>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr><td colspan="4"><p class="publication-content">{{ item['publication']['content'] | replace({"\n" : " <br/> "}) | raw }}</p></td></tr> {# raw not safe #}
+                        <tr>
+                            <td colspan="4" class="publication-button">
+                                <div><img src="{{ asset('images/thanks-button.png')}}" alt="thanks icon"><span class="light-grey">Envoyer un Thanks !</span></div>
+                                <div><img src="{{ asset('images/share-button.png')}}" alt="share icon"><span class="light-grey">Partager à un ami !</span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <span class="blue">{{ item['publication']['comments'] | length }} commentaires</span> - <span class="light-grey">{{ item['publication']['likes'] | length }} Thanks</span>
+                                <hr class="light-grey">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <div>
+                                    <input type="text" class="comment-input light-grey" placeholder="Ajouter un commentaire...">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><span class="publication-reason light-grey">Tu vois ceci parce que lorem ipsum</span></td>
+                        </tr>
+                    </table>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </article>
+
+{% endblock %}
