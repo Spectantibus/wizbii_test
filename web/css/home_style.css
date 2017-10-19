@@ -1,0 +1,133 @@
+html
+{
+    font-family: "Roboto", sans-serif;
+    color:#545d61;
+    font-size:1.1em;
+}
+body
+{
+    background-color: #f0f0f0;
+}
+
+article
+{
+    margin:100px auto 100px;
+    width:800px;
+}
+
+table
+{
+    width:100%;
+}
+
+hr
+{
+    color: #f9f9f9;
+    background-color: #f9f9f9;
+    border-color: #f9f9f9;
+}
+
+.light-grey
+{
+    color: #9da1a3;
+}
+
+.blue
+{
+    color:#1682b3;
+}
+
+.publication
+{
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #d9d9d9;
+    padding: 15px 15px 10px 15px;
+    margin-top:25px;
+}
+
+.publication-header-picture
+{
+    height:40px;
+    width:40px;
+    padding-right:10px;
+}
+.publication-header-picture img
+{
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+}
+
+.publication-name
+{
+    font-weight: bold;
+}
+
+.publication-content
+{
+    font-size:1.2rem;
+    margin:15px 0 20px;
+    font-weight:400;
+    line-height:1.4;
+}
+.publication-button
+{
+    padding-top:10px;
+    padding-bottom: 35px;;
+}
+
+.publication-button>div
+{
+    display:inline-block;
+    width:49%;
+    text-align: center;
+}
+.publication-button span
+{
+    display:inline-block;
+    height:100%;
+    padding: 6px 10px;
+    vertical-align: top;
+    font-size:1.1rem;
+}
+
+.publication-button img
+{
+    height:35px;
+    width:auto;
+}
+
+.down-arrow-icon
+{
+    width:40px;
+    height:60px;
+}
+
+.down-arrow-icon img
+{
+    width:40px;
+    height:40px;
+}
+
+.comment-input
+{
+    width:100%;
+    background-color: #f6f6f6;
+    border:none;
+    height:30px;
+    border-radius:5px;
+    font-size:1.1rem;
+    padding:3px 0 5px 10px;
+}
+
+
+
+.publication-reason
+{
+    display:block;
+    font-weight:bold;
+    text-align: center;
+    font-size:0.9rem;
+    margin:12px 0 0px;
+}
